@@ -1,0 +1,51 @@
+// //Glissement vers la droite des photos du state animation du Carousel
+// @keyframes rightSlide {
+//     0% {
+//         transform: translateX(0);
+
+//     }
+
+//     100% {
+
+//         transform: translateX(100%);
+//     }
+// }
+
+// //Glissement vers la gauche des photos du state animation de Gallery
+// @keyframes leftSlide {
+//     0% {
+
+//         transform: translateX(0);
+//     }
+
+//     100% {
+
+//         transform: translateX((-100%));
+//     }
+// }
+
+// //Ouverture de Collapse
+// @keyframes openAccordion {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-100%);
+
+//     }
+
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+
+
+//Rotation du loader
+@keyframes fullRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

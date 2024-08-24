@@ -1,0 +1,23 @@
+.header {
+    @include center-box;
+    width: 89%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    @include desktop-only {
+        margin-top: 45px;
+        margin-bottom: 50px;
+    }
+
+    &__logo {
+        width: 145px;
+        height: 47px;
+
+        @include desktop-only {
+            width: 210px;
+            height: 68px;
+        }
+    }
+}

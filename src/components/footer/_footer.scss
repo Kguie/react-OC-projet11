@@ -1,0 +1,39 @@
+.footer {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+        padding-top: 65px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include desktop-only {
+            gap: 30px;
+            padding-bottom: 30px;
+        }
+
+        &__logo {
+            width: 122px;
+            height: 40px;
+            align-self: center;
+        }
+
+        &__disclaimer {
+            font-size: 12px;
+            line-height: 17.11px;
+            text-align: center;
+            color: #fff;
+            width: 130px;
+
+            @include desktop-only {
+                width: 515px;
+            }
+
+        }
+    }
+
+}
