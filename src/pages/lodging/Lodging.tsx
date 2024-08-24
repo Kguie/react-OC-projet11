@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+
 import { useGetLodgings } from "../../utils/hooks/api/lodgings";
 import Loader from "../../utils/loader";
 

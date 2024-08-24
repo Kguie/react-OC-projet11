@@ -1,9 +1,12 @@
 .header {
     @include center-box;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 25px;
+
+    & {
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
 
     @include desktop-only {
         margin-top: 45px;

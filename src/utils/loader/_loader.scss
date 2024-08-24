@@ -3,10 +3,11 @@
     justify-content: space-around;
 
     &__icon {
-        @include center-box;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
         padding: 10px;
         border: 6px solid $clr-primary;
-
         border-radius: 50%;
         animation: fullRotate 1s infinite linear;
         width: 50%;
@@ -14,10 +15,14 @@
 }
 
 .loader {
-    @include center-box;
+
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     width: 200px;
     padding-top: 200px;
+
 
     @include tablet-only {
         width: 500px;

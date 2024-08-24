@@ -1,3 +1,4 @@
+import Banner from "../../components/banner/Banner";
 import { useGetLodgings } from "../../utils/hooks/api/lodgings";
 import Loader from "../../utils/loader";
 
@@ -10,7 +11,7 @@ export default function Home() {
         <Loader />
       ) : (
         <div className="home__container">
-          <p>Home</p>
+          <Banner pathname={"home"} />
         </div>
       )}
     </div>
