@@ -5,11 +5,11 @@ export default function Home() {
   const { data, isLoading } = useGetLodgings();
 
   return (
-    <div>
+    <div className="home">
       {isLoading ? (
         <Loader />
       ) : (
-        <div>
+        <div className="home__container">
           <p>Home</p>
         </div>
       )}
