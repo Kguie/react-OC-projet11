@@ -5,7 +5,7 @@ import Loader from "../../utils/loader";
 
 export default function Lodging() {
   const { id } = useParams();
-  const { data, isLoading } = useGetLodgings(id);
+  const { data, isLoading } = useGetLodgings();
 
   return (
     <div className="lodging">

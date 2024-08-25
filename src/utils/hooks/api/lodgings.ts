@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-type LodgingProps = {
+export type LodgingProps = {
   id: string;
   title: string;
   cover: string;
@@ -27,7 +27,9 @@ export function useGetLodgings(lodgingId?: string) {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const response = await fetch("data/lodgings.json");
+        const response = await fetch(
+          "http://localhost:3000/data/lodgings.json"
+        );
         if (!response.ok) throw new Error("Failed to fetch lodgings data");
 
         const lodgings: LodgingProps[] = await response.json();

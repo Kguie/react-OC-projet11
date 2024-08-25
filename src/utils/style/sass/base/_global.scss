@@ -7,10 +7,15 @@
     @include box-sizing(border-box);
 }
 
-//Mise en place de la police globale
 body {
     font-family: 'montserrat', sans-serif;
     width: 100%;
     max-width: 1440px;
     margin: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }

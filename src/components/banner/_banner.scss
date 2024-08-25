@@ -5,7 +5,7 @@
     overflow: hidden;
     flex: 1;
     min-height: 111px;
-    height: 111px;
+    max-height: 111px;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px #00000040;
 
@@ -25,7 +25,7 @@
     @include desktop-only {
         justify-content: center;
         min-height: 223px;
-        height: 223px;
+        max-height: 223px;
         border-radius: 25px;
     }
 

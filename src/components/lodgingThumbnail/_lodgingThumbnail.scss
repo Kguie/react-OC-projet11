@@ -1,0 +1,49 @@
+.lodging-thumbnail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    background-color: $clr-primary;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1.4;
+    cursor: pointer;
+
+    @include desktop-only {
+        padding-bottom: 20px;
+        aspect-ratio: 1;
+    }
+
+    &__cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    &__title {
+        z-index: 2;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25.67px;
+        margin: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+
+    }
+}

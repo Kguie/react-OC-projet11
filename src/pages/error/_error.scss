@@ -1,0 +1,54 @@
+.error {
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 110px;
+    padding-bottom: 110PX;
+    gap: 110px;
+    @include center-box;
+
+    @include desktop-only {
+        padding-top: 140px;
+        padding-bottom: 140PX;
+        gap: 140px
+    }
+
+    &__number {
+        font-size: 96px;
+        font-weight: 700;
+        // line-height: 136.9px;
+        margin: 0;
+        color: $clr-primary;
+
+        @include desktop-only {
+            font-size: 288px;
+            // line-height: 410.69px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25.67px;
+        color: $clr-primary;
+
+        @include desktop-only {
+            font-size: 36px;
+            line-height: 51.34px;
+        }
+    }
+
+    &__home-link {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19.96px;
+        color: #000;
+
+        @include desktop-only {
+            font-size: 18px;
+            line-height: 25.67px;
+        }
+    }
+}

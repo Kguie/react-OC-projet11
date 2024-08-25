@@ -11,9 +11,8 @@
 @import '../../../components/appNav/appNav';
 @import '../../../components/footer/footer';
 @import '../../../components/header/header';
-// @import '../../../components/card/card';
-// @import '../../../components/collapse/collapse';
-// @import '../../../components/error/error';
+@import '../../../components/lodgingThumbnail/lodgingThumbnail';
+@import '../../../components/dropdown/dropdown';
 // @import '../../../components/tag/tag';
 // @import '../../../components/gallery/gallery';
 @import '../../../components/banner/banner';
@@ -22,7 +21,8 @@
 
 // //Pages
 @import '../../../pages/home/home';
-// @import '../../../pages/about/about';
+@import '../../../pages/error/error';
+@import '../../../pages/about/about';
 // @import '../../../pages/lodging/lodging';
 
 //loader
