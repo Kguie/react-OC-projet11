@@ -1,11 +1,10 @@
 .header {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
     @include center-box;
 
-    & {
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-    }
+
 
     @include desktop-only {
         margin-top: 45px;
@@ -14,6 +13,7 @@
     &__logo {
         width: 145px;
         height: 47px;
+        user-select: none;
 
         @include desktop-only {
             width: 210px;

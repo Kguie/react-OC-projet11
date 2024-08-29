@@ -4,6 +4,7 @@
     aspect-ratio: 1.39;
     overflow: hidden;
     border-radius: 10px;
+    user-select: none;
 
     @include desktop-only {
         aspect-ratio: 1.93;
