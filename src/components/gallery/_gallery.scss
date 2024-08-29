@@ -31,10 +31,13 @@
             height: 20px;
             cursor: pointer;
 
-            @include desktop-only {
+            @include tablet-only {
                 width: 45px;
                 height: 80px;
 
+            }
+
+            @include desktop-only {
                 &:hover {
                     transform: scale(1.2, 1.2);
                     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);

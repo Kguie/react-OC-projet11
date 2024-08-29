@@ -120,13 +120,11 @@
                     text-align: right;
                     color: $clr-primary;
                     margin: 0;
-                    max-width: 15%;
 
                     @include desktop-only {
                         font-size: 18px;
                         font-weight: 500;
                         line-height: 25.67px;
-                        max-width: 30%;
                     }
                 }
 

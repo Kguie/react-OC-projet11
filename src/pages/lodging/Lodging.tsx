@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useGetLodgings } from "../../utils/hooks/api/lodgings";
 import Loader from "../../utils/loader";
 import Gallery from "../../components/gallery/Gallery";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Tag from "../../components/tag/Tag";
 import StarRating from "../../components/starRating/StarRating";
 import Dropdown from "../../components/dropdown/Dropdown";
@@ -17,8 +17,17 @@ export default function Lodging() {
   useEffect(() => {
     if (lodgingIsNotArray) {
       document.title = data.title || "Titre de la location";
-      console.log(data.rating);
     }
+  }, [data, lodgingIsNotArray]);
+
+  const hostName = useMemo(() => {
+    if (lodgingIsNotArray) {
+      const nameArray = data.host.name.split(" ");
+      if (nameArray.length) {
+        return { firstName: nameArray[0], lastName: nameArray[1] };
+      }
+    }
+    return null;
   }, [data, lodgingIsNotArray]);
 
   return (
@@ -46,7 +55,15 @@ export default function Lodging() {
               <div className="lodging__header__informations">
                 <div className="lodging__header__informations__host">
                   <p className="lodging__header__informations__host__name">
-                    {data.host.name}
+                    {hostName ? (
+                      <>
+                        <span>{hostName.firstName}</span>
+                        <br />
+                        <span>{hostName.lastName}</span>
+                      </>
+                    ) : (
+                      data.host.name
+                    )}
                   </p>
                   <div className="lodging__header__informations__host__profile">
                     <img
