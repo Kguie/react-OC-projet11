@@ -1,0 +1,190 @@
+.lodging {
+    flex: 1;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+    @include center-box;
+
+    @include desktop-only {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        gap: 25px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @include desktop-only {
+            row-gap: 25px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include desktop-only {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        &__presentation {
+            @include desktop-only {
+                flex: 3;
+            }
+
+            &__title {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 25.67px;
+                margin: 0;
+                color: $clr-primary;
+
+                @include desktop-only {
+                    font-size: 36px;
+                    line-height: 51.34px;
+                    padding-top: 5px;
+                }
+            }
+
+            &__location {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 19.96px;
+                margin: 15px 0 0 0;
+
+                @include desktop-only {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 25.67px;
+                }
+            }
+
+            &__tags-wrapper {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 10px;
+
+                @include desktop-only {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &__informations {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+
+            @include desktop-only {
+                flex-direction: column;
+                gap: 20px;
+                flex: 1;
+                align-items: flex-end;
+                padding-right: 2px;
+                padding-bottom: 5px;
+            }
+
+            &__host {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                flex: 1;
+                align-items: center;
+                justify-content: flex-end;
+
+                @include desktop-only {
+                    flex: none;
+                }
+
+                &__name {
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 17.11px;
+                    text-align: right;
+                    color: $clr-primary;
+                    margin: 0;
+                    max-width: 15%;
+
+                    @include desktop-only {
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 25.67px;
+                        max-width: 30%;
+                    }
+                }
+
+                &__profile {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50px;
+                    overflow: hidden;
+                    background-color: $clr-bgDark;
+                    position: relative;
+
+                    @include desktop-only {
+                        width: 64px;
+                        height: 64px;
+                    }
+
+                    &__photo {
+                        object-fit: cover;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &__rating-wrapper {
+                display: flex;
+                flex-direction: row-reverse;
+                column-gap: 5px;
+                padding-left: 2px;
+
+                @include desktop-only {
+                    column-gap: 15px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include desktop-only {
+            gap: 0px;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        &__dropdown-wrapper {
+            @include desktop-only {
+                gap: 0px;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-basis: 45%;
+            }
+        }
+    }
+}

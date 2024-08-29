@@ -7,27 +7,32 @@ type Props = {
 
 export default function Dropdown({ title, content }: Props) {
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
+
   const isContentList = Array.isArray(content);
 
   function handleClickDropdown() {
-    const openDropdownClass = "dropdown--open";
+    const openDropdownClass = "dropdown__body--open";
+    const reverseIconClass = "dropdown__head__icon--open";
     if (dropdownRef.current?.classList.contains(openDropdownClass)) {
       dropdownRef.current.classList.remove(openDropdownClass);
+      iconRef.current?.classList.remove(reverseIconClass);
     } else {
       dropdownRef.current?.classList.add(openDropdownClass);
+      iconRef.current?.classList.add(reverseIconClass);
     }
   }
   return (
-    <div aria-expanded="false" className="dropdown" ref={dropdownRef}>
+    <div className="dropdown">
       <button
         onClick={handleClickDropdown}
         className="dropdown__head"
         aria-label={title}
         aria-haspopup>
         <span className="dropdown__head__title">{title}</span>
-        <span className="dropdown__head__icon" aria-hidden="true"></span>
+        <span className="dropdown__head__icon" ref={iconRef}></span>
       </button>
-      <div className="dropdown__body" aria-hidden="true">
+      <div className="dropdown__body" ref={dropdownRef}>
         {isContentList ? (
           <ul className="dropdown__body__list">
             {content.map((item) => (

@@ -30,7 +30,11 @@ export default function About() {
       <Banner pathname={"about"} />
       <section className="about__container">
         {ABOUT_CONTENT.map(({ title, content }) => (
-          <Dropdown key={"dropdown" + title} title={title} content={content} />
+          <Dropdown
+            key={"dropdown" + title.toLowerCase()}
+            title={title}
+            content={content}
+          />
         ))}
       </section>
     </main>
