@@ -26,7 +26,7 @@ export default function AppNav() {
 
     if (pathname === "/") {
       updateLinkSelection(homeNavLink.current);
-    } else if (pathname.includes("about")) {
+    } else if (pathname === "/about") {
       updateLinkSelection(aboutNavLink.current);
     } else {
       updateLinkSelection(null);

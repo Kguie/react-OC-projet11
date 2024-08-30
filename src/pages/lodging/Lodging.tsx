@@ -76,7 +76,7 @@ export default function Lodging() {
                 <div className="lodging__header__informations__rating-wrapper">
                   {[...Array(5)].map((_, index) => (
                     <StarRating
-                      isActive={parseInt(data.rating) <= index + 1}
+                      isActive={parseInt(data.rating) >= index + 1}
                       key={"star-" + index}
                     />
                   ))}
