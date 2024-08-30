@@ -25,20 +25,20 @@
 
 ## Structure du Projet
 
-  ├── public
-  │     └── data/           # Contient les données des logements
-  └──  src
-        ├── assets          # Contient les images
-        │     ├── icons/    # Contient les icônes au format svg
-        │     └── photos/   # Contient les photos
-        ├── components      # Contient les components
-        ├── pages           # Contient les pages
-        ├── utils           # Contient les utilitaires
-        │     ├── hooks/    # Contient les hooks
-        │     ├── loader/   # Contient le loader
-        │     ├── router/   # Contient le router
-        │     └── style/    # Contient les fichiers sass
-        └── index.tsx       # Entrée
+-    ├── public
+-    │     └── data/           # Contient les données des logements
+-    └──  src
+-          ├── assets          # Contient les images
+-          │     ├── icons/    # Contient les icônes au format svg
+-          │     └── photos/   # Contient les photos
+-          ├── components      # Contient les components
+-          ├── pages           # Contient les pages
+-          ├── utils           # Contient les utilitaires
+-          │     ├── hooks/    # Contient les hooks
+-          │     ├── loader/   # Contient le loader
+-          │     ├── router/   # Contient le router
+-          │     └── style/    # Contient les fichiers sass
+-          └── index.tsx       # Entrée
 
 
 ## Auteurs

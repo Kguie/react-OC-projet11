@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Banner from "../../components/banner/Banner";
 import Dropdown from "../../components/dropdown/Dropdown";
 
@@ -25,6 +26,9 @@ const ABOUT_CONTENT: { title: string; content: string }[] = [
 ];
 
 export default function About() {
+  useEffect(() => {
+    document.title = "À propos";
+  }, []);
   return (
     <main className="about">
       <Banner pathname={"about"} />

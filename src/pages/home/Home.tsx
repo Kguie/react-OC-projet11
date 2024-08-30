@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Banner from "../../components/banner/Banner";
 import LodgingThumbnail from "../../components/lodgingThumbnail/lodgingThumbnail";
 import { useGetLodgings } from "../../utils/hooks/api/lodgings";
@@ -7,6 +8,10 @@ export default function Home() {
   const { data, isLoading } = useGetLodgings();
 
   const isDataArray = data && Array.isArray(data);
+
+  useEffect(() => {
+    document.title = "Accueil";
+  }, []);
 
   return (
     <main className="home">
