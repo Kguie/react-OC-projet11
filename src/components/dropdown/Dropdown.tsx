@@ -17,16 +17,21 @@ export default function Dropdown({ title, content }: Props) {
     const openDropdownContainerClass = "dropdown--open";
     const reverseIconClass = "dropdown__head__icon--open";
 
+    //close
     if (dropdownRef.current?.classList.contains(openDropdownClass)) {
       dropdownRef.current.classList.remove(openDropdownClass);
       iconRef.current?.classList.remove(reverseIconClass);
       dropdownContainerRef.current?.classList.remove(
         openDropdownContainerClass
       );
+      //open
     } else {
       dropdownRef.current?.classList.add(openDropdownClass);
       iconRef.current?.classList.add(reverseIconClass);
-      dropdownContainerRef.current?.classList.add(openDropdownContainerClass);
+      //Correction du borderRadius
+      setTimeout(() => {
+        dropdownContainerRef.current?.classList.add(openDropdownContainerClass);
+      }, 300);
     }
   }
   return (
