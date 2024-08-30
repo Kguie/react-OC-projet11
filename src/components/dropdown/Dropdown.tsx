@@ -24,14 +24,13 @@ export default function Dropdown({ title, content }: Props) {
   }
   return (
     <div className="dropdown">
-      <button
-        onClick={handleClickDropdown}
-        className="dropdown__head"
-        aria-label={title}
-        aria-haspopup>
+      <div className="dropdown__head" aria-label={title} aria-haspopup>
         <span className="dropdown__head__title">{title}</span>
-        <span className="dropdown__head__icon" ref={iconRef}></span>
-      </button>
+        <span
+          onClick={handleClickDropdown}
+          className="dropdown__head__icon"
+          ref={iconRef}></span>
+      </div>
       <div className="dropdown__body" ref={dropdownRef}>
         {isContentList ? (
           <ul className="dropdown__body__list">
