@@ -29,9 +29,7 @@
             overflow: auto;
             display: flex;
 
-            @include desktop-only {
-                padding: 20px;
-            }
+
         }
 
         &__sentence {
