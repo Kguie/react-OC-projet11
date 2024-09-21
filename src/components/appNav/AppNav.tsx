@@ -12,6 +12,7 @@ export default function AppNav() {
   useEffect(() => {
     const links = [homeNavLink.current, aboutNavLink.current];
 
+    //Gère sous-lignage du lien selon la page
     const updateLinkSelection = (selectedLink: HTMLAnchorElement | null) => {
       links.forEach((link) => {
         if (link) {

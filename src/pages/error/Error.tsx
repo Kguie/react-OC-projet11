@@ -5,6 +5,7 @@ export default function Error() {
   useEffect(() => {
     document.title = "Erreur";
   }, []);
+
   return (
     <main className="error">
       <p className="error__number">404</p>

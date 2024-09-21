@@ -17,9 +17,9 @@ export type LodgingProps = {
   tags: string[];
 };
 
-export function useGetLodgings(lodgingId?: string) {
+export function useGetAllLodgings() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [data, setData] = useState<LodgingProps | LodgingProps[]>();
+  const [data, setData] = useState<LodgingProps[]>();
 
   const navigate = useNavigate();
 
@@ -34,9 +34,39 @@ export function useGetLodgings(lodgingId?: string) {
 
         const lodgings: LodgingProps[] = await response.json();
 
-        const selectedLodging = lodgingId
-          ? lodgings.find(({ id }) => id === lodgingId)
-          : lodgings;
+        setData(lodgings);
+      } catch (error) {
+        console.error(error);
+        navigate("/error");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchData();
+  }, [navigate]);
+
+  return { data, isLoading };
+}
+
+export function useGetLodging(lodgingId: string) {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [data, setData] = useState<LodgingProps>();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        if (!lodgingId) throw new Error("Failed to fetch lodgings data");
+        setIsLoading(true);
+        const response = await fetch(
+          "http://localhost:3000/data/lodgings.json"
+        );
+        if (!response.ok) throw new Error("Failed to fetch lodgings data");
+
+        const lodgings: LodgingProps[] = await response.json();
+
+        const selectedLodging = lodgings.find(({ id }) => id === lodgingId);
 
         if (!selectedLodging) throw new Error("Lodging not found");
 

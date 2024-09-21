@@ -1,7 +1,5 @@
 import { useState } from "react";
-
-import arrowLeft from "../../assets/icons/arrow-left.svg";
-import arrowRight from "../../assets/icons/arrow-right.svg";
+import GalleryNavigation from "./GalleryNavigation";
 
 type Props = {
   pictures: Array<string>;
@@ -25,42 +23,29 @@ function Gallery({ pictures }: Props) {
     }, 300);
   }
 
+  function getPictureClass(index: number): string {
+    const totalPictures = pictures.length;
+
+    if (index === pictureNumber) return "gallery__picture--current";
+    if (index === (pictureNumber - 1 + totalPictures) % totalPictures)
+      return "gallery__picture--previous";
+    if (index === (pictureNumber + 1) % totalPictures)
+      return "gallery__picture--next";
+    return "";
+  }
+
   return (
     <div className="gallery">
-      {pictures.length > 1 && (
-        <span className="gallery__navigation">
-          <img
-            className="gallery__navigation__icon"
-            src={arrowLeft}
-            alt="Voir précédente"
-            onClick={() => changePicture("previous")}
-          />
-          <span className="gallery__navigation__index">
-            {`${pictureNumber + 1}/${pictures.length}`}
-          </span>
-          <img
-            className="gallery__navigation__icon"
-            src={arrowRight}
-            alt="Voir suivante"
-            onClick={() => changePicture("next")}
-          />
-        </span>
-      )}
-
+      <GalleryNavigation
+        pictures={pictures}
+        changePicture={changePicture}
+        pictureNumber={pictureNumber}
+      />
       <div className="gallery__pictures-wrapper">
         {pictures.map((picture, index) => (
           <img
             key={"gallery-picture-" + index}
-            className={`gallery__pictures-wrapper__picture ${
-              index === pictureNumber
-                ? "gallery__pictures-wrapper__picture--current"
-                : index ===
-                  (pictureNumber - 1 + pictures.length) % pictures.length
-                ? "gallery__pictures-wrapper__picture--previous"
-                : index === (pictureNumber + 1) % pictures.length
-                ? "gallery__pictures-wrapper__picture--next"
-                : ""
-            }`}
+            className={`gallery__picture ${getPictureClass(index)}`}
             src={picture}
             alt={`${index + 1}`}
           />

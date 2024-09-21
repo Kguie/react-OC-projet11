@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import DropdownContent from "./DropdownContent";
 
 type Props = {
   title: string;
@@ -9,8 +10,6 @@ export default function Dropdown({ title, content }: Props) {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const dropdownContainerRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
-
-  const isContentList = Array.isArray(content);
 
   function handleClickDropdown() {
     const openDropdownClass = "dropdown__body--open";
@@ -44,19 +43,7 @@ export default function Dropdown({ title, content }: Props) {
           ref={iconRef}></span>
       </div>
       <div className="dropdown__body" ref={dropdownRef}>
-        {isContentList ? (
-          <ul className="dropdown__body__list">
-            {content.map((item) => (
-              <li
-                key={title + "-" + item}
-                className="dropdown__body__list__item">
-                {item}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="dropdown__body__sentence">{content}</p>
-        )}
+        <DropdownContent title={title} content={content} />
       </div>
     </div>
   );

@@ -1,13 +1,11 @@
 import { useEffect } from "react";
+
 import Banner from "../../components/banner/Banner";
-import LodgingThumbnail from "../../components/lodgingThumbnail/lodgingThumbnail";
-import { useGetLodgings } from "../../utils/hooks/api/lodgings";
-import Loader from "../../utils/loader";
+import { useGetAllLodgings } from "../../utils/hooks/api/lodgings";
+import HomeContent from "../../components/home/HomeContent";
 
 export default function Home() {
-  const { data, isLoading } = useGetLodgings();
-
-  const isDataArray = data && Array.isArray(data);
+  const { data, isLoading } = useGetAllLodgings();
 
   useEffect(() => {
     document.title = "Accueil";
@@ -17,21 +15,7 @@ export default function Home() {
     <main className="home">
       <div className="home__container">
         <Banner pathname={"home"} />
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <section className="home__container__cards-wrapper">
-            {isDataArray &&
-              data.map(({ id, cover, title }) => (
-                <LodgingThumbnail
-                  id={id}
-                  cover={cover}
-                  title={title}
-                  key={"lodging-thumbnail-" + id}
-                />
-              ))}
-          </section>
-        )}
+        <HomeContent data={data} isLoading={isLoading} />
       </div>
     </main>
   );

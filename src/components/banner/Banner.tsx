@@ -6,6 +6,11 @@ type Props = {
 };
 
 export default function Banner({ pathname }: Props) {
+  const BannerText: React.FC = () =>
+    pathname === "home" ? (
+      <p className="banner__text">Chez vous, partout et ailleurs</p>
+    ) : null;
+
   return (
     <div className="banner">
       <img
@@ -13,9 +18,7 @@ export default function Banner({ pathname }: Props) {
         className="banner__image"
         src={pathname === "home" ? homeBanner : aboutBanner}
       />
-      {pathname === "home" && (
-        <p className="banner__text">Chez vous, partout et ailleurs</p>
-      )}
+      <BannerText />
     </div>
   );
 }
