@@ -1,6 +1,6 @@
 import { LodgingProps } from "../../utils/hooks/api/lodgings";
 import Loader from "../../utils/loader";
-import LodgingThumbnail from "../lodgingThumbnail/lodgingThumbnail";
+import LodgingThumbnail from "../lodgingThumbnail/LodgingThumbnail";
 
 type Props = {
   data?: LodgingProps[];

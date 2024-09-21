@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useMemo } from "react";
 
 import { useGetLodging } from "../../utils/hooks/api/lodgings";
 import Loader from "../../utils/loader";
 import Gallery from "../../components/gallery/Gallery";
-import { useEffect, useMemo } from "react";
 import Dropdown from "../../components/dropdown/Dropdown";
 import LodgingHeader from "../../components/lodging/LodgingHeader";
 

@@ -11,22 +11,18 @@ type Props = {
 };
 
 export default function LodgingHeader({ data, hostName }: Props) {
-  const HostName: React.FC = () => {
-    if (!hostName) {
-      return (
-        <p className="lodging__header__informations__host__name">
-          data.host.name
-        </p>
-      );
-    }
-    return (
+  const HostName: React.FC = () =>
+    hostName ? (
       <p className="lodging__header__informations__host__name">
         <span>{hostName.firstName}</span>
         <br />
         <span>{hostName.lastName}</span>
       </p>
+    ) : (
+      <p className="lodging__header__informations__host__name">
+        data.host.name
+      </p>
     );
-  };
 
   return (
     <div className="lodging__header">

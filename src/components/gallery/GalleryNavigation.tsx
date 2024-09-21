@@ -12,9 +12,9 @@ export default function GalleryNavigation({
   pictureNumber,
   changePicture,
 }: Props) {
-  const isVisible = pictures.length > 1;
+  const isAvailable = pictures.length > 1;
 
-  if (!isVisible) {
+  if (!isAvailable) {
     return null;
   }
 
