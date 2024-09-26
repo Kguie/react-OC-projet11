@@ -39,9 +39,8 @@ export default function LodgingHeader({ data, hostName }: Props) {
       </div>
       <div className="lodging__header__informations">
         <div className="lodging__header__informations__host">
-          <p className="lodging__header__informations__host__name">
-            <HostName />
-          </p>
+          <HostName />
+
           <div className="lodging__header__informations__host__profile">
             <img
               alt={data.host.name}
